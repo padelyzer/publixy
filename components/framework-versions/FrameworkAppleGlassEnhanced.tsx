@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion'
+import { motion, AnimatePresence, useMotionValue, useSpring, PanInfo } from 'framer-motion'
 import { useIsMobile } from '@/hooks/useIsMobile'
 
 const FrameworkAppleGlassEnhanced = () => {
@@ -147,7 +147,7 @@ const FrameworkAppleGlassEnhanced = () => {
         {/* Navigation Arrows - Fixed positioning without transform conflicts */}
         <button
           onClick={() => setActiveIndex((prev) => (prev - 1 + framework.length) % framework.length)}
-          className="absolute -left-10 z-20 group flex items-center justify-center"
+          className="absolute -left-10 z-20 group flex items-center justify-center hidden md:flex"
           style={{ top: 'calc(50% - 28px)' }}
         >
           <motion.div 
@@ -174,7 +174,7 @@ const FrameworkAppleGlassEnhanced = () => {
         
         <button
           onClick={() => setActiveIndex((prev) => (prev + 1) % framework.length)}
-          className="absolute -right-10 z-20 group flex items-center justify-center"
+          className="absolute -right-10 z-20 group flex items-center justify-center hidden md:flex"
           style={{ top: 'calc(50% - 28px)' }}
         >
           <motion.div 
@@ -207,6 +207,17 @@ const FrameworkAppleGlassEnhanced = () => {
             exit={{ opacity: 0, scale: 1.05, filter: 'blur(20px)' }}
             transition={{ duration: 0.5 }}
             className="relative"
+            drag={isMobile ? "x" : false}
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(e, info: PanInfo) => {
+              const threshold = 50
+              if (info.offset.x > threshold) {
+                setActiveIndex((prev) => (prev - 1 + framework.length) % framework.length)
+              } else if (info.offset.x < -threshold) {
+                setActiveIndex((prev) => (prev + 1) % framework.length)
+              }
+            }}
         >
           <div 
             className="relative rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-10 overflow-hidden"

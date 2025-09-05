@@ -532,7 +532,7 @@ export default function PublixyPage() {
             </p>
           </motion.div>
 
-          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-4 md:p-6 lg:p-8 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory scrollbar-hide">
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-4 md:p-6 lg:p-8 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory scrollbar-hide touch-pan-x" style={{ WebkitOverflowScrolling: 'touch', scrollBehavior: 'smooth' }}>
             {[
               {
                 name: 'Starter',

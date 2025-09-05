@@ -1,13 +1,15 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion'
+import { motion, AnimatePresence, useMotionValue, useSpring, PanInfo } from 'framer-motion'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 const TestimonialsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
+  const isMobile = useIsMobile()
   
   const springX = useSpring(mouseX, { stiffness: 50, damping: 20 })
   const springY = useSpring(mouseY, { stiffness: 50, damping: 20 })
@@ -177,6 +179,17 @@ const TestimonialsSection = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
             className="relative"
+            drag={isMobile ? "x" : false}
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(e, info: PanInfo) => {
+              const threshold = 50
+              if (info.offset.x > threshold) {
+                setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+              } else if (info.offset.x < -threshold) {
+                setActiveIndex((prev) => (prev + 1) % testimonials.length)
+              }
+            }}
             style={{
               transform: `translateX(${springX.get()}px) translateY(${springY.get()}px)`,
             }}
@@ -284,6 +297,23 @@ const TestimonialsSection = () => {
             </div>
           </motion.div>
         </AnimatePresence>
+
+        {/* Dots indicator for mobile */}
+        {isMobile && (
+          <div className="flex justify-center gap-2 mt-6">
+            {testimonials.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveIndex(idx)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  idx === activeIndex 
+                    ? 'bg-white/60 w-8' 
+                    : 'bg-white/20'
+                }`}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Indicadores de confianza */}
         <motion.div
