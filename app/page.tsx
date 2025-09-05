@@ -145,7 +145,7 @@ export default function PublixyPage() {
             : 'bg-gradient-to-b from-black/30 to-transparent backdrop-blur-sm'
         }`} />
         
-        <nav className="relative max-w-7xl mx-auto px-6 py-5">
+        <nav className="relative max-w-7xl mx-auto px-4 md:px-6 py-5">
           <div className="flex items-center justify-between">
             {/* Logo Minimal */}
             <motion.div 
@@ -212,7 +212,7 @@ export default function PublixyPage() {
 
       {/* Framework P.U.B.L.I.X.Y Section */}
       <LazySection delay={0.3}>
-        <section id="metodologia" className="py-16 relative overflow-hidden bg-black">
+        <section id="metodologia" className="py-8 md:py-12 lg:py-16 relative overflow-hidden bg-black">
           {/* Fondo animado con efecto glass sutil */}
           <div className="absolute inset-0">
             {/* Floating glass orbs */}
@@ -234,7 +234,7 @@ export default function PublixyPage() {
             <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
             <motion.div 
               className="text-center mb-10"
               initial={{ opacity: 0, y: 10 }}
@@ -245,7 +245,7 @@ export default function PublixyPage() {
               <p className="text-gray-500 text-xs uppercase tracking-wider mb-4">
                 Nuestra metodología
               </p>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
+              <h2 className="text-2xl md:text-3xl lg:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
                 <span className="text-white">Descubre cómo podemos transformar</span>
                 <span className="block bg-gradient-to-r from-[#64B8CF] to-[#F5D757] bg-clip-text text-transparent">tu estrategia publicitaria</span>
               </h2>
@@ -273,7 +273,7 @@ export default function PublixyPage() {
 
       {/* Nuestros Medios Section */}
       <LazySection delay={0.4}>
-        <section id="medios" className="py-16 relative overflow-hidden bg-black">
+        <section id="medios" className="py-8 md:py-12 lg:py-16 relative overflow-hidden bg-black">
         {/* Fondo animado con efecto glass sutil */}
         <div className="absolute inset-0">
           {/* Floating glass orbs */}
@@ -295,7 +295,7 @@ export default function PublixyPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
           <motion.div 
             className="text-center mb-10"
             initial={{ opacity: 0, y: 10 }}
@@ -306,7 +306,7 @@ export default function PublixyPage() {
             <p className="text-gray-500 text-xs uppercase tracking-wider mb-4">
               Red de medios premium
             </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
+            <h2 className="text-2xl md:text-3xl lg:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
               <span className="text-white">Conecta con tu audiencia en</span>
               <span className="block bg-gradient-to-r from-[#64B8CF] to-[#F5D757] bg-clip-text text-transparent">los mejores espacios</span>
             </h2>
@@ -357,7 +357,7 @@ export default function PublixyPage() {
             >
               {/* Left - Details with Glass Effect */}
               <div 
-                className="relative rounded-2xl p-8 overflow-hidden"
+                className="relative rounded-2xl p-4 md:p-6 lg:p-8 overflow-hidden"
                 style={{
                   background: 'rgba(255, 255, 255, 0.02)',
                   backdropFilter: 'blur(40px) saturate(180%)',
@@ -365,10 +365,10 @@ export default function PublixyPage() {
                   boxShadow: 'inset 0 0 30px rgba(255, 255, 255, 0.05), 0 20px 60px rgba(0, 0, 0, 0.3)',
                 }}
               >
-                <h3 className="text-3xl font-bold mb-2">{mediaTypes[activeTab].title}</h3>
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2">{mediaTypes[activeTab].title}</h3>
                 <p className="text-gray-400 mb-6">{mediaTypes[activeTab].subtitle}</p>
 
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div>
                     <div className="flex items-baseline space-x-2 mb-3">
                       <span className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#64B8CF] to-[#7BD3E2] bg-clip-text text-transparent">
@@ -412,7 +412,7 @@ export default function PublixyPage() {
                     </h4>
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <div className="text-2xl font-bold text-white">{mediaTypes[activeTab].coverage.total}</div>
+                        <div className="text-lg md:text-xl lg:text-2xl font-bold text-white">{mediaTypes[activeTab].coverage.total}</div>
                         <div className="text-xs text-gray-400">Ubicaciones</div>
                       </div>
                       <div>
@@ -426,10 +426,10 @@ export default function PublixyPage() {
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="text-sm text-gray-400">Inversión desde</div>
-                        <div className="text-3xl font-bold text-[#F5D757]">{mediaTypes[activeTab].price}</div>
+                        <div className="text-xl md:text-2xl lg:text-3xl font-bold text-[#F5D757]">{mediaTypes[activeTab].price}</div>
                       </div>
                       <motion.button
-                        className="px-6 py-3 rounded-lg font-semibold text-white"
+                        className="px-4 md:px-6 py-3 rounded-lg font-semibold text-white"
                         style={{
                           background: 'linear-gradient(135deg, rgba(100, 184, 207, 0.3), rgba(123, 211, 226, 0.3))',
                           backdropFilter: 'blur(20px)',
@@ -456,7 +456,7 @@ export default function PublixyPage() {
                     border: '1px solid rgba(255, 255, 255, 0.1)',
                   }}
                 >
-                  <div className="text-center p-8">
+                  <div className="text-center p-4 md:p-6 lg:p-8">
                     <div className="text-8xl mb-6 opacity-50">
                       {activeTab === 'miyis' && '🚻'}
                       {activeTab === 'paseo' && '🏢'}
@@ -490,7 +490,7 @@ export default function PublixyPage() {
 
       {/* Pricing Calculator */}
       <LazySection delay={0.5}>
-        <section id="pricing" className="py-16 relative overflow-hidden bg-black">
+        <section id="pricing" className="py-8 md:py-12 lg:py-16 relative overflow-hidden bg-black">
         {/* Fondo animado con efecto glass sutil */}
         <div className="absolute inset-0">
           {/* Floating glass orbs */}
@@ -512,7 +512,7 @@ export default function PublixyPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
           <motion.div 
             className="text-center mb-10"
             initial={{ opacity: 0, y: 10 }}
@@ -523,7 +523,7 @@ export default function PublixyPage() {
             <p className="text-gray-500 text-xs uppercase tracking-wider mb-4">
               Planes flexibles
             </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
+            <h2 className="text-2xl md:text-3xl lg:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
               <span className="text-white">Encuentra el plan perfecto para</span>
               <span className="block bg-gradient-to-r from-[#64B8CF] to-[#F5D757] bg-clip-text text-transparent">tu inversión publicitaria</span>
             </h2>
@@ -532,7 +532,7 @@ export default function PublixyPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4 md:p-6 lg:p-8">
             {[
               {
                 name: 'Starter',
@@ -608,10 +608,10 @@ export default function PublixyPage() {
                   </div>
                 )}
                 
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                <div className="mb-4 md:mb-6 lg:mb-8">
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-2">{plan.name}</h3>
                   <div className="flex items-baseline mb-4">
-                    <span className="text-4xl font-bold bg-gradient-to-r from-[#64B8CF] to-[#7BD3E2] bg-clip-text text-transparent">
+                    <span className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#64B8CF] to-[#7BD3E2] bg-clip-text text-transparent">
                       {plan.price}
                     </span>
                     <span className="text-gray-400 ml-2">{plan.period}</span>
@@ -619,7 +619,7 @@ export default function PublixyPage() {
                   <p className="text-gray-400">{plan.description}</p>
                 </div>
 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-4 md:mb-6 lg:mb-8">
                   {plan.features.map((feature, j) => (
                     <li key={j} className="flex items-start space-x-2">
                       <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -659,7 +659,7 @@ export default function PublixyPage() {
 
       {/* Contact Form Section - Minimal UI like Hero */}
       <LazySection delay={0.7}>
-        <section id="contact" className="py-16 relative overflow-hidden bg-black">
+        <section id="contact" className="py-8 md:py-12 lg:py-16 relative overflow-hidden bg-black">
         {/* Fondo animado con efecto glass sutil */}
         <div className="absolute inset-0">
           {/* Floating glass orbs */}
@@ -681,7 +681,7 @@ export default function PublixyPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
         </div>
         
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Info */}
             <motion.div
@@ -695,7 +695,7 @@ export default function PublixyPage() {
                 <span className="text-xs text-gray-500">Respuesta en menos de 2 horas</span>
               </div>
               
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+              <h2 className="text-2xl md:text-3xl lg:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
                 <span className="text-white">Hablemos de</span>
                 <span className="block bg-gradient-to-r from-[#64B8CF] to-[#F5D757] bg-clip-text text-transparent">resultados reales</span>
               </h2>
@@ -805,10 +805,10 @@ export default function PublixyPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-12">
           {/* Glass container */}
           <div 
-            className="relative rounded-2xl p-8 overflow-hidden"
+            className="relative rounded-2xl p-4 md:p-6 lg:p-8 overflow-hidden"
             style={{
               background: 'rgba(255, 255, 255, 0.01)',
               backdropFilter: 'blur(20px) saturate(150%)',
@@ -816,7 +816,7 @@ export default function PublixyPage() {
               boxShadow: 'inset 0 0 20px rgba(255, 255, 255, 0.01)',
             }}
           >
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:p-6 lg:p-8">
               {/* Logo & Description */}
               <div className="lg:col-span-2">
                 <motion.div 
@@ -913,7 +913,7 @@ export default function PublixyPage() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="mt-8 pt-6 border-t border-white/[0.05]">
+            <div className="mt-4 md:mt-6 lg:mt-8 pt-6 border-t border-white/[0.05]">
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <p className="text-xs text-gray-600 mb-2 md:mb-0">
                   © 2024 Publixy. Todos los derechos reservados.

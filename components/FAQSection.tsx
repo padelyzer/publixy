@@ -52,7 +52,7 @@ export default function FAQSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-16 relative overflow-hidden bg-black">
+    <section className="py-8 md:py-12 lg:py-16 relative overflow-hidden bg-black">
       {/* Fondo animado con efecto glass sutil */}
       <div className="absolute inset-0">
         {/* Floating glass orbs */}
@@ -74,7 +74,7 @@ export default function FAQSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
       </div>
       
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6">
         {/* Header minimalista */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -93,7 +93,7 @@ export default function FAQSection() {
         </motion.div>
 
         {/* Grid de FAQ estilo framework */}
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-3 md:p-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={faq.id}
@@ -113,7 +113,7 @@ export default function FAQSection() {
                 whileTap={{ scale: 0.99 }}
               >
                 {/* Contenedor principal */}
-                <div className="p-4 relative">
+                <div className="p-3 md:p-4 relative">
                   {/* Letra grande de fondo */}
                   <div 
                     className="absolute -top-2 -left-2 text-6xl font-black opacity-[0.02] text-white"

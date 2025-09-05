@@ -2,10 +2,12 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 export default function HeroInteractiveLiveRefined() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
   const [liveViewers, setLiveViewers] = useState(2847)
+  const isMobile = useIsMobile()
 
   // Simulate live viewer updates
   useEffect(() => {
@@ -23,7 +25,7 @@ export default function HeroInteractiveLiveRefined() {
   ]
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black">
+    <section className="relative min-h-[600px] md:min-h-screen overflow-hidden bg-black">
       {/* Premium Animated Background */}
       <div className="absolute inset-0">
         {/* Floating glass orbs effect - sutil como el header */}
@@ -49,7 +51,7 @@ export default function HeroInteractiveLiveRefined() {
         />
         
         {/* Floating orbs - Fixed positions for hydration */}
-        {[
+        {!isMobile && [
           { left: '10%', top: '20%', color: 'rgba(100, 184, 207, 0.15)' },
           { left: '70%', top: '15%', color: 'rgba(245, 215, 87, 0.15)' },
           { left: '85%', top: '60%', color: 'rgba(100, 184, 207, 0.15)' },
@@ -95,8 +97,8 @@ export default function HeroInteractiveLiveRefined() {
       </div>
 
       <div className="relative z-10 min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-6 py-32 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-32 w-full">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             
             {/* Left Content - Enhanced */}
             <motion.div
@@ -105,7 +107,7 @@ export default function HeroInteractiveLiveRefined() {
               transition={{ duration: 0.8 }}
             >
               {/* Enhanced Title */}
-              <h1 className="text-5xl lg:text-7xl font-bold mb-6">
+              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6">
                 <motion.span 
                   className="block text-white"
                   initial={{ opacity: 0, y: 20 }}
@@ -125,7 +127,7 @@ export default function HeroInteractiveLiveRefined() {
                   </span>
                 </motion.span>
                 <motion.span 
-                  className="block text-white text-3xl lg:text-5xl mt-4"
+                  className="block text-white text-xl md:text-3xl lg:text-5xl mt-2 md:mt-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
@@ -135,7 +137,7 @@ export default function HeroInteractiveLiveRefined() {
               </h1>
 
               <motion.p 
-                className="text-xl text-gray-300 mb-8"
+                className="text-sm md:text-xl text-gray-300 mb-6 md:mb-8"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
@@ -147,12 +149,12 @@ export default function HeroInteractiveLiveRefined() {
 
 
               {/* Primary CTAs */}
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 <motion.a
                   href="#contact"
                   whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(100, 184, 207, 0.4)' }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative px-8 py-4 bg-gradient-to-r from-[#64B8CF] to-[#7BD3E2] text-white font-bold rounded-xl overflow-hidden inline-block"
+                  className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#64B8CF] to-[#7BD3E2] text-white text-sm md:text-base font-bold rounded-xl overflow-hidden inline-block text-center"
                 >
                   <span className="relative z-10">Empieza ahora</span>
                   <motion.div
@@ -167,7 +169,7 @@ export default function HeroInteractiveLiveRefined() {
                   href="#testimonials"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-white/10 backdrop-blur border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-colors inline-block"
+                  className="px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur border border-white/20 text-white text-sm md:text-base font-bold rounded-xl hover:bg-white/20 transition-colors inline-block text-center"
                 >
                   Ver casos de éxito
                 </motion.a>
@@ -189,7 +191,7 @@ export default function HeroInteractiveLiveRefined() {
                 </div>
               </div>
                     {/* Live Locations Grid */}
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-3 md:gap-4">
                       {locations.map((location, index) => (
                         <motion.div
                           key={location.id}

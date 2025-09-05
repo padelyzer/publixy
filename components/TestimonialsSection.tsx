@@ -127,7 +127,7 @@ const TestimonialsSection = () => {
   const activeTestimonial = testimonials[activeIndex]
 
   return (
-    <section className="py-16 relative overflow-hidden bg-black">
+    <section className="py-8 md:py-12 lg:py-16 relative overflow-hidden bg-black">
       {/* Fondo animado con efecto glass sutil */}
       <div className="absolute inset-0">
         {/* Floating glass orbs */}
@@ -149,7 +149,7 @@ const TestimonialsSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6" ref={containerRef}>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6" ref={containerRef}>
         {/* Header minimalista */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -158,7 +158,7 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
+          <h2 className="text-xl md:text-2xl lg:text-4xl font-bold mb-2">
             <span className="text-white">Historias que</span>
             <span className="bg-gradient-to-r from-[#64B8CF] to-[#F5D757] bg-clip-text text-transparent"> inspiran</span>
           </h2>
@@ -181,7 +181,7 @@ const TestimonialsSection = () => {
               transform: `translateX(${springX.get()}px) translateY(${springY.get()}px)`,
             }}
           >
-            <div className="relative bg-white/[0.02] backdrop-blur-md rounded-2xl border border-white/[0.08] p-8 overflow-hidden">
+            <div className="relative bg-white/[0.02] backdrop-blur-md rounded-xl md:rounded-2xl border border-white/[0.08] p-4 md:p-6 lg:p-8 overflow-hidden">
               {/* Glow effect */}
               <motion.div
                 className="absolute inset-0 opacity-20 blur-3xl"
@@ -206,9 +206,9 @@ const TestimonialsSection = () => {
                 {activeTestimonial.letter}
               </div>
 
-              <div className="relative z-10 grid lg:grid-cols-2 gap-8">
+              <div className="relative z-10 grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
                 {/* Contenido izquierdo */}
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   {/* Quote */}
                   <div>
                     <div className="text-5xl text-white/10 font-serif mb-2">"</div>
@@ -218,7 +218,7 @@ const TestimonialsSection = () => {
                   </div>
 
                   {/* Comparación Before/After */}
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-2 md:gap-3">
                     <div className="bg-black/40 rounded-lg p-3">
                       <div className="text-xs text-gray-600 mb-1">Antes</div>
                       <div className="text-lg font-medium text-gray-600 line-through">
@@ -251,7 +251,7 @@ const TestimonialsSection = () => {
                 </div>
 
                 {/* Métricas derecha */}
-                <div className="space-y-3">
+                <div className="space-y-2 md:space-y-3">
                   {activeTestimonial.stats.map((stat, idx) => (
                     <motion.div
                       key={idx}

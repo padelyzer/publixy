@@ -23,7 +23,7 @@ export default function LiveMetricsBar() {
   }, [])
 
   return (
-    <section className="py-16 relative overflow-hidden bg-black">
+    <section className="py-8 md:py-12 lg:py-16 relative overflow-hidden bg-black">
       {/* Fondo animado con efecto glass sutil */}
       <div className="absolute inset-0">
         {/* Floating glass orbs */}
@@ -45,7 +45,7 @@ export default function LiveMetricsBar() {
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6">
         {/* CTA Title - Moved to top */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -1,8 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 export default function BrandsSection() {
+  const isMobile = useIsMobile()
   // Mock de logos usando emojis/íconos como placeholder
   const brands = [
     { name: 'BBVA Bancomer', icon: '🏦', color: 'from-blue-400 to-blue-600' },
@@ -20,7 +22,7 @@ export default function BrandsSection() {
   ]
 
   return (
-    <section className="-mt-8 pb-4 relative overflow-hidden bg-black">
+    <section className="-mt-4 md:-mt-8 pb-2 md:pb-4 relative overflow-hidden bg-black">
       {/* Fondo animado similar al hero */}
       <div className="absolute inset-0">
         <motion.div
@@ -38,7 +40,7 @@ export default function BrandsSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
         {/* Brands Carousel con logos */}
         <div className="relative">
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
@@ -51,7 +53,7 @@ export default function BrandsSection() {
             transition={{ delay: 0.2 }}
           >
             <motion.div 
-              className="flex space-x-6"
+              className="flex space-x-3 md:space-x-6"
               animate={{ x: [0, -2400] }}
               transition={{ 
                 duration: 40, 
@@ -69,7 +71,7 @@ export default function BrandsSection() {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <div
-                    className="w-40 h-20 flex items-center justify-center backdrop-blur-sm rounded-lg border hover:border-cyan-500/30 transition-all cursor-pointer relative overflow-hidden"
+                    className="w-28 h-16 md:w-40 md:h-20 flex items-center justify-center backdrop-blur-sm rounded-lg border hover:border-cyan-500/30 transition-all cursor-pointer relative overflow-hidden"
                     style={{
                       background: 'rgba(255, 255, 255, 0.01)',
                       borderColor: 'rgba(255, 255, 255, 0.08)',
@@ -84,7 +86,7 @@ export default function BrandsSection() {
                     {/* Logo/Icon */}
                     <div className="relative z-10">
                       <motion.div
-                        className="text-3xl opacity-40 group-hover:opacity-70 transition-opacity"
+                        className="text-2xl md:text-3xl opacity-40 group-hover:opacity-70 transition-opacity"
                         whileHover={{ rotate: [0, -5, 5, 0] }}
                         transition={{ duration: 0.5 }}
                       >
@@ -110,7 +112,7 @@ export default function BrandsSection() {
         </div>
 
         {/* Segunda fila de marcas (opcional, moviéndose en dirección opuesta) */}
-        <div className="relative mt-6">
+        {!isMobile && <div className="relative mt-6">
           <motion.div 
             className="flex overflow-hidden"
             initial={{ opacity: 0 }}
@@ -118,7 +120,7 @@ export default function BrandsSection() {
             transition={{ delay: 0.4 }}
           >
             <motion.div 
-              className="flex space-x-6"
+              className="flex space-x-3 md:space-x-6"
               animate={{ x: [-2400, 0] }}
               transition={{ 
                 duration: 40, 
@@ -136,7 +138,7 @@ export default function BrandsSection() {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <div
-                    className="w-40 h-20 flex items-center justify-center backdrop-blur-sm rounded-lg border hover:border-cyan-500/30 transition-all cursor-pointer relative overflow-hidden"
+                    className="w-28 h-16 md:w-40 md:h-20 flex items-center justify-center backdrop-blur-sm rounded-lg border hover:border-cyan-500/30 transition-all cursor-pointer relative overflow-hidden"
                     style={{
                       background: 'rgba(255, 255, 255, 0.01)',
                       borderColor: 'rgba(255, 255, 255, 0.08)',
@@ -151,7 +153,7 @@ export default function BrandsSection() {
                     {/* Logo/Icon */}
                     <div className="relative z-10">
                       <motion.div
-                        className="text-3xl opacity-40 group-hover:opacity-70 transition-opacity"
+                        className="text-2xl md:text-3xl opacity-40 group-hover:opacity-70 transition-opacity"
                         whileHover={{ rotate: [0, -5, 5, 0] }}
                         transition={{ duration: 0.5 }}
                       >
@@ -174,7 +176,7 @@ export default function BrandsSection() {
               ))}
             </motion.div>
           </motion.div>
-        </div>
+        </div>}
 
         {/* Texto sutil debajo de los logos */}
         <motion.div 
@@ -184,7 +186,7 @@ export default function BrandsSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.8 }}
         >
-          <p className="text-gray-500 text-xs mb-8">
+          <p className="text-gray-500 text-xs mb-4 md:mb-8">
             Confianza que se traduce en resultados - Más de 150 marcas
           </p>
           
