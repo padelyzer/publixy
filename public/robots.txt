@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /brands-demo
+Disallow: /header-demo
+Disallow: /hero-demo
+
+Sitemap: https://publixy.mx/sitemap.xml

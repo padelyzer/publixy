@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .hexagon {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  }
+  
+  .gradient-publixy {
+    background: linear-gradient(135deg, #1E3A8A 0%, #0891B2 100%);
+  }
+  
+  .gradient-gold {
+    background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+  }
+  
+  .card-shadow {
+    box-shadow: 0 10px 30px -10px rgba(30, 58, 138, 0.2);
+  }
+  
+  .card-shadow-hover {
+    box-shadow: 0 20px 40px -10px rgba(30, 58, 138, 0.3);
+  }
+  
+  .gradient-mesh {
+    background-image: 
+      radial-gradient(at 40% 20%, hsla(200, 90%, 50%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(220, 90%, 40%, 0.2) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(190, 100%, 40%, 0.2) 0px, transparent 50%),
+      radial-gradient(at 80% 100%, hsla(240, 90%, 70%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(220, 90%, 40%, 0.1) 0px, transparent 50%);
+  }
+  
+  .glow-text {
+    text-shadow: 
+      0 0 10px rgba(8, 145, 178, 0.5),
+      0 0 20px rgba(8, 145, 178, 0.3),
+      0 0 30px rgba(8, 145, 178, 0.2);
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .neon-border {
+    box-shadow: 
+      0 0 5px #64B8CF,
+      0 0 10px #64B8CF,
+      inset 0 0 5px #64B8CF;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+}
