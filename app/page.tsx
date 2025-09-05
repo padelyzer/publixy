@@ -446,8 +446,8 @@ export default function PublixyPage() {
               </div>
 
               
-              {/* Right - Image Space */}
-              <div className="relative">
+              {/* Right - Image Space - Hidden on Mobile */}
+              <div className="relative hidden lg:block">
                 <motion.div 
                   className="h-full min-h-[500px] rounded-2xl overflow-hidden relative flex items-center justify-center"
                   style={{
@@ -532,7 +532,7 @@ export default function PublixyPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-4 md:p-6 lg:p-8">
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-4 md:p-6 lg:p-8 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory scrollbar-hide">
             {[
               {
                 name: 'Starter',
@@ -589,7 +589,7 @@ export default function PublixyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`relative rounded-xl p-6 border ${
+                className={`relative rounded-xl p-6 border flex-shrink-0 w-[280px] md:w-auto snap-center ${
                   plan.popular ? 'border-cyan-500/20' : 'border-white/5'
                 }`}
                 style={{

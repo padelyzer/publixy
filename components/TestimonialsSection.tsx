@@ -211,7 +211,7 @@ const TestimonialsSection = () => {
                 <div className="space-y-4 md:space-y-6">
                   {/* Quote */}
                   <div>
-                    <div className="text-5xl text-white/10 font-serif mb-2">"</div>
+                    <div className="text-3xl md:text-5xl text-white/10 font-serif mb-1 md:mb-2">"</div>
                     <p className="text-sm text-gray-400 leading-relaxed">
                       {activeTestimonial.quote}
                     </p>

@@ -176,12 +176,12 @@ export default function HeroInteractiveLiveRefined() {
               </div>
             </motion.div>
 
-            {/* Right - Live Locations */}
+            {/* Right - Live Locations - Hidden on Mobile */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              className="relative hidden lg:block"
             >
               <div className="mb-4 text-center lg:text-left">
                 <span className="text-gray-400 text-sm">Ubicaciones en vivo</span>

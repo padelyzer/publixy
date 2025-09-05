@@ -2,12 +2,14 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 const FrameworkAppleGlassEnhanced = () => {
   const [activeIndex, setActiveIndex] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
+  const isMobile = useIsMobile()
   
   const springX = useSpring(mouseX, { stiffness: 50, damping: 20 })
   const springY = useSpring(mouseY, { stiffness: 50, damping: 20 })
@@ -207,7 +209,7 @@ const FrameworkAppleGlassEnhanced = () => {
             className="relative"
         >
           <div 
-            className="relative rounded-3xl p-8 lg:p-10 overflow-hidden"
+            className="relative rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-10 overflow-hidden"
             style={{
               background: 'rgba(255, 255, 255, 0.02)',
               backdropFilter: 'blur(40px) saturate(200%)',
