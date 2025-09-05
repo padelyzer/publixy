@@ -12,6 +12,17 @@ const nextConfig = {
   // Compresión
   compress: true,
   
+  // Redirects
+  async redirects() {
+    return [
+      {
+        source: '/publixy',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
+  
   // Headers de seguridad y cache
   async headers() {
     return [
